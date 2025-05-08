@@ -25,6 +25,6 @@ public class SearchUtil {
             }
         }
 
-        return null; // Không tìm thấy
+        return null;
     }
 }

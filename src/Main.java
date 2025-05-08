@@ -6,9 +6,15 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        catalog.add(new Book("Java Basics", "Alice", 15.99));
-        catalog.add(new Book("Algorithms", "Bob", 25.99));
-        catalog.add(new Book("Data Structures", "Charlie", 19.99));
+        catalog.add(new Book("Clean Code", "Robert C. Martin", 30.00));
+        catalog.add(new Book("Design Patterns", "Erich Gamma", 35.50));
+        catalog.add(new Book("Effective Java", "Joshua Bloch", 28.75));
+        catalog.add(new Book("Refactoring", "Martin Fowler", 32.20));
+        catalog.add(new Book("The Pragmatic Programmer", "Andrew Hunt", 27.95));
+        catalog.add(new Book("Structure and Interpretation of Computer Programs", "Harold Abelson", 33.99));
+        catalog.add(new Book("Head First Java", "Kathy Sierra", 22.40));
+        catalog.add(new Book("Introduction to Algorithms", "Cormen", 39.95));
+
 
         while (true) {
             showMenu();
@@ -23,7 +29,8 @@ public class Main {
                 case 5 -> sortBooks();
                 case 6 -> searchBook();
                 case 7 -> addBook();
-                case 8 -> {
+                case 8 -> viewAllBooks();
+                case 9 -> {
                     for (int i = 0; i <= 3; i++) {
                         String dots = ".".repeat(i);
                         System.out.printf("\rExiting program%s", dots);
@@ -50,7 +57,8 @@ public class Main {
         System.out.println("5. Sort Books by Title");
         System.out.println("6. Search Book by Title");
         System.out.println("7. Add Book to Catalog");
-        System.out.println("8. Exit");
+        System.out.println("8. View All Books in Catalog");
+        System.out.println("9. Exit");
     }
 
     private static void addOrder() {
@@ -141,6 +149,17 @@ public class Main {
             System.out.println("Found: " + book);
         } else {
             System.out.println("Book not found.");
+        }
+    }
+
+    private static void viewAllBooks() {
+        System.out.println("\n== Book Catalog ==");
+        if (catalog.isEmpty()) {
+            System.out.println("No books in catalog.");
+            return;
+        }
+        for (Book book : catalog) {
+            System.out.println(book);
         }
     }
 
