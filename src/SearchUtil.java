@@ -2,7 +2,6 @@ import java.util.List;
 
 public class SearchUtil {
     public static Book findBookByTitle(List<Book> books, String title) {
-        // Đảm bảo danh sách đã được sắp xếp theo title
         SortUtil.sortBooksByTitle(books);
         return binarySearch(books, title);
     }
@@ -24,7 +23,6 @@ public class SearchUtil {
                 left = mid + 1;
             }
         }
-
         return null;
     }
 }

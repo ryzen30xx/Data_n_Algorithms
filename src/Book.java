@@ -9,7 +9,6 @@ public class Book {
         this.price = price;
     }
 
-    // ✅ Getter methods needed for sorting/searching
     public String getTitle() {
         return title;
     }
